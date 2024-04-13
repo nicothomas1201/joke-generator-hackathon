@@ -7,10 +7,10 @@ import IconRowRight from '@/icons/IconRowRight.astro'
   <div class="content">
     <span>designed and developed by</span>
     <div class="names-icons">
-      <div class="name">Yeider</div>
+      <a href="https://github.com/Ye1der" class="name" target="_blank">Yeider</a>
       <IconRowLeft />
       <IconRowRight />
-      <div class="name">Nicolas</div>
+      <a href="https://github.com/nicothomas1201" class="name" target="_blank">Nicolas</a>
     </div>
   </div>
 </footer>
@@ -32,6 +32,8 @@ import IconRowRight from '@/icons/IconRowRight.astro'
 
       .name {
         color: var(--yellow);
+        text-decoration: none;
+        transition: text-shadow 0.3s ease-in-out;
 
         &:first-of-type {
           transform: rotate(-15deg);
@@ -40,7 +42,10 @@ import IconRowRight from '@/icons/IconRowRight.astro'
         &:last-of-type {
           transform: rotate(15deg);
         }
-        /* transform: rotateY('angle') */
+
+        &:hover {
+          text-shadow: 1px 1px 10px #fed7888d;
+        }
       }
     }
   }
