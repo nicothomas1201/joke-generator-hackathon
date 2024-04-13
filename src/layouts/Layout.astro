@@ -1,0 +1,63 @@
+---
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="layout">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --black: #171717;
+    --white: #ffffff;
+    --orange: #ff6b00;
+    --yellow: #fed688;
+    --green: #d5ef9a;
+    --headline1: 400 5rem / normal Pacifico;
+    --body2: 400 1.25rem / normal Acme;
+    --body1-semibold: 600 1.5rem / normal Poppins;
+    --button-semibold: 600 1.125rem / normal Poppins;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    color: var(--white);
+  }
+</style>
+<style>
+  .layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+</style>

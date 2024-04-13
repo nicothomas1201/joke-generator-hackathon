@@ -1,0 +1,24 @@
+---
+import IconEmoji from '@/icons/IconEmoji.astro'
+---
+
+<header class="header">
+  <IconEmoji />
+  <h1 class="header-title">Jokes</h1>
+</header>
+
+<style>
+  .header {
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    justify-content: center;
+    padding-block: 2rem;
+
+    .header-title {
+      margin-block: 0;
+      font: var(--headline1);
+    }
+  }
+</style>

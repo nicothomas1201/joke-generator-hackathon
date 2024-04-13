@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { JokeCard } from '@/components/JokeCard'
+---
+
+<Layout title="Jokes Genereator">
+  <div class="joke-card-container">
+    <JokeCard />
+  </div>
+</Layout>
+
+<style>
+  .joke-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 100%;
+  }
+</style>

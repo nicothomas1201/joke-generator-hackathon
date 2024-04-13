@@ -1,0 +1,35 @@
+.joke-card {
+  border: 1px solid var(--yellow);
+  max-inline-size: 697px;
+  inline-size: 100%;
+  padding: 23px;
+  background-color: #212121;
+  border-radius: 20px;
+  box-shadow: 0 4px 50px -20px #fed7888d;
+  position: relative;
+  padding-block-end: 75px;
+
+  .joke-text {
+    border-radius: 20px;
+    margin-block: 0;
+    font: var(--body1-semibold);
+  }
+
+  .joke-button {
+    position: absolute;
+    bottom: 0;
+    right: -1px;
+    padding-block: 9px;
+    padding-inline: 16px;
+    font: var(--button-semibold);
+    border-start-start-radius: 20px;
+    border-end-end-radius: 20px;
+    background-color: var(--yellow);
+    color: var(--black);
+    border: 1px solid transparent;
+    border-inline-end-color: var(--white);
+    border-block-end-color: var(--white);
+    cursor: pointer;
+    /* padding: ; */
+  }
+}

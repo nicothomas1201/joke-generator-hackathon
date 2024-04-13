@@ -1,0 +1,47 @@
+---
+import IconRowLeft from '@/icons/IconRowLeft.astro'
+import IconRowRight from '@/icons/IconRowRight.astro'
+---
+
+<footer class="footer">
+  <div class="content">
+    <span>designed and developed by</span>
+    <div class="names-icons">
+      <div class="name">Yeider</div>
+      <IconRowLeft />
+      <IconRowRight />
+      <div class="name">Nicolas</div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px;
+    font: var(--body2);
+    color: var(--white);
+
+    .names-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      .name {
+        color: var(--yellow);
+
+        &:first-of-type {
+          transform: rotate(-15deg);
+        }
+
+        &:last-of-type {
+          transform: rotate(15deg);
+        }
+        /* transform: rotateY('angle') */
+      }
+    }
+  }
+</style>
