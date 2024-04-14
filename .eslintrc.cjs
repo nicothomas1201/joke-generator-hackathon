@@ -18,7 +18,12 @@ module.exports = {
   },
   plugins: ['unused-imports'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'unused-imports/no-unused-imports': 'error',
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
     'unused-imports/no-unused-vars': [
