@@ -27,15 +27,17 @@ export function JokeCard() {
           // cuando el index llegue al final resolvemos la promesa
           resolve()
         }
-      }, 5)
+      }, 10)
     })
   }
 
   const generateJoke = async () => {
-    setLoading(true)
-    addJoke(jokeText).then(() => {
-      setLoading(false)
-    })
+    if (!loading) {
+      setLoading(true)
+      addJoke(jokeText).then(() => {
+        setLoading(false)
+      })
+    }
   }
 
   useEffect(() => {
