@@ -1,11 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { JokeCard } from '@/components/JokeCard'
+import { Card } from '@/components/Card'
+import IconQuestion from '@/icons/IconQuestion.astro'
 ---
 
 <Layout title="Jokes Genereator">
+  <Card top="40%">
+    <IconQuestion />
+  </Card>
+  <Card left="15%" top="70%" rotation="21deg">
+    <IconQuestion />
+  </Card>
+  <Card left="80%" top="20%" rotation="18deg">
+    <IconQuestion />
+  </Card>
+  <Card left="80%" top="50%" rotation="-24deg">
+    <IconQuestion />
+  </Card>
   <div class="joke-card-container">
-    <JokeCard client:load/>
+    <JokeCard client:load />
   </div>
 </Layout>
 

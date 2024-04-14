@@ -41,26 +41,26 @@
   }
 
   .joke-button::after {
-    content: "";
-  background: #fffcf68d; /* color de fondo hover */
-  position: absolute;
-  z-index: -1;
-  padding: 16px 20px;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 100%;
-  right: -100%;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+    content: '';
+    background: #fffcf68d; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
   }
 
-  .joke-button:hover::after {
+  .joke-button.animate:hover::after {
     left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
   }
 }

@@ -1,6 +1,6 @@
 import '@/styles/loading.css'
 
-export function Loading () {
+export function Loading() {
   return (
     <div className="container">
       <div className="circle1"> </div>
