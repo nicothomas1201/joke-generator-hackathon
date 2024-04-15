@@ -1,12 +1,31 @@
 import { useEffect, useState } from 'react'
 import { Loading } from '@/icons/Loading'
 import { writtingEffect } from '@/utils'
+import type { JokeData } from '@/lib/joke'
+
 import '@/styles/joke-card.css'
 
 export function JokeCard() {
   const [loading, setLoading] = useState(false)
-  const jokeText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in'
-  const [joke, setJoke] = useState(jokeText)
+  const [joke, setJoke] = useState('')
+
+  useEffect(() => {
+    setLoading(true)
+  }, [])
+
+  useEffect(() => {
+    if (loading) {
+      fetch('/api/joke.json?lang=en&type=single')
+        .then((res) => res.json())
+        .then((data: JokeData) => {
+          addJoke(data.joke)
+        })
+        .catch((err) => {
+          console.log(err)
+          setLoading(false)
+        })
+    }
+  }, [loading])
 
   const addJoke = async (jokeText: string) => {
     await writtingEffect(jokeText, (text) => setJoke(text))
@@ -14,13 +33,10 @@ export function JokeCard() {
   }
 
   const generateJoke = async () => {
+    setJoke('')
     setLoading(true)
-    addJoke(jokeText)
+    // await addJoke('lorem insup')
   }
-
-  // useEffect(() => {
-  //   addJoke(jokeText)
-  // }, [])
 
   return (
     <div className="joke-card">

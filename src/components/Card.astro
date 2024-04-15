@@ -4,30 +4,32 @@ interface Props {
   top?: string
   scale?: string
   rotation?: string
-  animation?: {translateX: string, translateY: string}
+  animation?: { translateX: string; translateY: string }
   animationDelay?: string
 }
 
-const {left, rotation, scale, top, animation, animationDelay} = Astro.props
+const { left, rotation, scale, top, animation, animationDelay } = Astro.props
 var translateX = animation?.translateX ?? '0%'
 var translateY = animation?.translateY ?? '0%'
 ---
 
-
-<div style={`--top: ${top}; --left: ${left}; --rotate: ${rotation}; --scale: ${scale ?? '100%'}; --translateX: ${translateX}; --translateY: ${translateY}; --delay: ${animationDelay ?? '0s'}`} class="card">
-  <slot/>
+<div
+  style={`--top: ${top}; --left: ${left}; --rotate: ${rotation}; --scale: ${scale ?? '100%'}; --translateX: ${translateX}; --translateY: ${translateY}; --delay: ${animationDelay ?? '0s'}`}
+  class="card"
+>
+  <slot />
   <span> lorempin lor lorempin su sum lorem loremiptsum </span>
 </div>
 
 <style>
   :root {
-  --top: 0;
-  --left: 0;
-  --rotate: 10deg;
-  --scale: 0%;
-  --translateX: 0%;
-  --translateY: 0%;
-  --delay: 0s
+    --top: 0;
+    --left: 0;
+    --rotate: 10deg;
+    --scale: 0%;
+    --translateX: 0%;
+    --translateY: 0%;
+    --delay: 0s;
   }
 
   .card {
