@@ -1,17 +1,20 @@
 ---
-
 interface Props {
   left?: string
   top?: string
   scale?: string
   rotation?: string
+  animation?: {translateX: string, translateY: string}
+  animationDelay?: string
 }
 
-const {left, rotation, scale, top} = Astro.props
+const {left, rotation, scale, top, animation, animationDelay} = Astro.props
+var translateX = animation?.translateX ?? '0%'
+var translateY = animation?.translateY ?? '0%'
 ---
 
 
-<div style={`--top: ${top}; --left: ${left}; --rotate: ${rotation}; --scale: ${scale ?? '100%'}`} class="card">
+<div style={`--top: ${top}; --left: ${left}; --rotate: ${rotation}; --scale: ${scale ?? '100%'}; --translateX: ${translateX}; --translateY: ${translateY}; --delay: ${animationDelay ?? '0s'}`} class="card">
   <slot/>
   <span> lorempin lor lorempin su sum lorem loremiptsum </span>
 </div>
@@ -22,6 +25,9 @@ const {left, rotation, scale, top} = Astro.props
   --left: 0;
   --rotate: 10deg;
   --scale: 0%;
+  --translateX: 0%;
+  --translateY: 0%;
+  --delay: 0s
   }
 
   .card {
@@ -40,10 +46,12 @@ const {left, rotation, scale, top} = Astro.props
     justify-content: center;
     padding: 15px;
     border-radius: 10px;
-    animation: fadeIn 1.3s ease-in-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: var(--delay);
     overflow: hidden;
     cursor: pointer;
     height: 200px;
+    opacity: 0;
 
     * {
       z-index: 1;
@@ -80,11 +88,11 @@ const {left, rotation, scale, top} = Astro.props
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(var(--top)) translateX(var(--left)) rotate(var(--rotate)) scale(var(--scale));
+      transform: translate(var(--translateX), var(--translateY)) rotate(var(--rotate)) scale(var(--scale));
     }
     to {
       opacity: 1;
-      transform: translateY(0px) translateX(0px) rotate(var(--rotate)) scale(var(--scale));
+      transform: translate(0, 0) rotate(var(--rotate)) scale(var(--scale));
     }
   }
 

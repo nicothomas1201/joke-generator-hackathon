@@ -8,6 +8,7 @@
   box-shadow: 0 4px 50px -20px #fed7888d;
   position: relative;
   padding-block-end: 75px;
+  animation: fadeInJoke 1s ease-in-out forwards;
 
   .joke-text {
     border-radius: 20px;
@@ -62,5 +63,17 @@
     bottom: 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
+  }
+}
+
+@keyframes fadeInJoke {
+  from {
+    opacity: 0;
+    scale: 90%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
   }
 }

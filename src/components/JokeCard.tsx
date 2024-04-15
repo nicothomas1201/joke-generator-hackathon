@@ -4,10 +4,9 @@ import { writtingEffect } from '@/utils'
 import '@/styles/joke-card.css'
 
 export function JokeCard() {
-  const [joke, setJoke] = useState('')
   const [loading, setLoading] = useState(false)
-  const jokeText =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in'
+  const jokeText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in'
+  const [joke, setJoke] = useState(jokeText)
 
   const addJoke = async (jokeText: string) => {
     await writtingEffect(jokeText, (text) => setJoke(text))
@@ -19,9 +18,9 @@ export function JokeCard() {
     addJoke(jokeText)
   }
 
-  useEffect(() => {
-    addJoke(jokeText)
-  }, [])
+  // useEffect(() => {
+  //   addJoke(jokeText)
+  // }, [])
 
   return (
     <div className="joke-card">
